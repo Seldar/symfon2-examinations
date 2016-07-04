@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="20174bcd-5c1a-4630-b888-6ec0015e27f1" name="medicore" url="http://176.9.74.112/medicore/symfony_demo">
+        <fileTransfer host="176.9.74.112" port="22" rootFolder="/var/www/html/medicore/symfony_demo" accessType="SFTP" password="dfc4df9cdfefdfe8dffbdfe6df99dfc2" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
