@@ -222,6 +222,57 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
         not_comment_new:
 
+        // app_commuting_export
+        if (preg_match('#^/(?P<_locale>en|fr|de|es|cs|nl|ru|uk|ro|pt_BR|pl|it|ja|id|ca|sl)/commuting\\-allowance/getCSV$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_app_commuting_export;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_commuting_export')), array (  '_controller' => 'AppBundle\\Controller\\CommutingController::exportAction',  '_locale' => 'en',));
+        }
+        not_app_commuting_export:
+
+        // exam_index
+        if (preg_match('#^/(?P<_locale>en|fr|de|es|cs|nl|ru|uk|ro|pt_BR|pl|it|ja|id|ca|sl)/examinations/?$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_exam_index;
+            }
+
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'exam_index');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'exam_index')), array (  'page' => 1,  '_controller' => 'AppBundle\\Controller\\ExaminationController::indexAction',  '_locale' => 'en',));
+        }
+        not_exam_index:
+
+        // exam_index_paginated
+        if (preg_match('#^/(?P<_locale>en|fr|de|es|cs|nl|ru|uk|ro|pt_BR|pl|it|ja|id|ca|sl)/examinations/page/(?P<page>[1-9]\\d*)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_exam_index_paginated;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'exam_index_paginated')), array (  '_controller' => 'AppBundle\\Controller\\ExaminationController::indexAction',  '_locale' => 'en',));
+        }
+        not_exam_index_paginated:
+
+        // app_examination_apientryupdate
+        if (preg_match('#^/(?P<_locale>en|fr|de|es|cs|nl|ru|uk|ro|pt_BR|pl|it|ja|id|ca|sl)/examinations/api/models/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_examination_apientryupdate')), array (  '_controller' => 'AppBundle\\Controller\\ExaminationController::apiEntryUpdateAction',  '_locale' => 'en',));
+        }
+
+        // app_examination_apientries
+        if (preg_match('#^/(?P<_locale>en|fr|de|es|cs|nl|ru|uk|ro|pt_BR|pl|it|ja|id|ca|sl)/examinations/api/models/?$#s', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'app_examination_apientries');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_examination_apientries')), array (  '_controller' => 'AppBundle\\Controller\\ExaminationController::apiEntriesAction',  '_locale' => 'en',));
+        }
+
         // security_login
         if (preg_match('#^/(?P<_locale>en|fr|de|es|cs|nl|ru|uk|ro|pt_BR|pl|it|ja|id|ca|sl)/login$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'security_login')), array (  '_controller' => 'AppBundle\\Controller\\SecurityController::loginAction',  '_locale' => 'en',));
