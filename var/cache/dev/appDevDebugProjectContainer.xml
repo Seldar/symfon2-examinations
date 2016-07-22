@@ -418,7 +418,7 @@
       </parameter>
     </parameter>
     <parameter key="console.command.ids" type="collection">
-      <parameter>console.command.sensiolabs_security_command_securitycheckercommand</parameter>
+      <parameter>sensio_distribution.security_checker.command</parameter>
     </parameter>
   </parameters>
   <services>
@@ -451,6 +451,9 @@
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="translator"/>
       <argument type="service" id="request_stack"/>
+    </service>
+    <service id="validate_request_listener" class="Symfony\Component\HttpKernel\EventListener\ValidateRequestListener">
+      <tag name="kernel.event_subscriber"/>
     </service>
     <service id="http_kernel" class="Symfony\Component\HttpKernel\HttpKernel">
       <argument type="service" id="debug.event_dispatcher"/>
@@ -548,7 +551,7 @@
                   <tag name="cache.pool"/>
                   <argument>3utrNWXxXv</argument>
                   <argument></argument>
-                  <argument>F8r1ZZchzeiB7-T8pX50Zg</argument>
+                  <argument>9HgdzwDOFDiGBZZAp2x0FQ</argument>
                   <argument>F:\wamp\www\medicore\symfony2-examinations\var\cache\dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -561,7 +564,7 @@
                   <tag name="cache.pool"/>
                   <argument>ZfyqbYjMZB</argument>
                   <argument></argument>
-                  <argument>F8r1ZZchzeiB7-T8pX50Zg</argument>
+                  <argument>9HgdzwDOFDiGBZZAp2x0FQ</argument>
                   <argument>F:\wamp\www\medicore\symfony2-examinations\var\cache\dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1184,7 +1187,7 @@
       <tag name="cache.pool"/>
       <argument>TVa0BpAZwG</argument>
       <argument></argument>
-      <argument>F8r1ZZchzeiB7-T8pX50Zg</argument>
+      <argument>9HgdzwDOFDiGBZZAp2x0FQ</argument>
       <argument>F:\wamp\www\medicore\symfony2-examinations\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1241,6 +1244,7 @@
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="collection">
                 <argument>form.type_extension.form.http_foundation</argument>
                 <argument>form.type_extension.form.validator</argument>
+                <argument>form.type_extension.upload.validator</argument>
                 <argument>form.type_extension.csrf</argument>
                 <argument>form.type_extension.form.data_collector</argument>
               </argument>
@@ -1395,6 +1399,11 @@
     </service>
     <service id="form.type_extension.submit.validator" class="Symfony\Component\Form\Extension\Validator\Type\SubmitTypeValidatorExtension">
       <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\SubmitType" extended-type="Symfony\Component\Form\Extension\Core\Type\SubmitType"/>
+    </service>
+    <service id="form.type_extension.upload.validator" class="Symfony\Component\Form\Extension\Validator\Type\UploadValidatorExtension">
+      <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+      <argument type="service" id="translator"/>
+      <argument>validators</argument>
     </service>
     <service id="form.type_extension.csrf" class="Symfony\Component\Form\Extension\Csrf\Type\FormTypeCsrfExtension">
       <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
@@ -1824,6 +1833,10 @@
         <argument>Symfony\Component\HttpKernel\EventListener\TranslatorListener</argument>
       </call>
       <call method="addSubscriberService">
+        <argument>validate_request_listener</argument>
+        <argument>Symfony\Component\HttpKernel\EventListener\ValidateRequestListener</argument>
+      </call>
+      <call method="addSubscriberService">
         <argument>session_listener</argument>
         <argument>Symfony\Bundle\FrameworkBundle\EventListener\SessionListener</argument>
       </call>
@@ -1976,7 +1989,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>579267bfda6545.85797666</argument>
+            <argument>579281b4d3e3c6.23952721</argument>
           </service>
         </argument>
       </argument>
@@ -2236,7 +2249,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>579267bfda6545.85797666</argument>
+            <argument>579281b4d3e3c6.23952721</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
