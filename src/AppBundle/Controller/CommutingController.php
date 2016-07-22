@@ -51,8 +51,7 @@ class CommutingController extends Controller
             //Iterating months from start of the year until recent month
             for($i = 1; $i < date("n"); $i++) {
                 $paymentDate = $this->calculatePaymentDate($i);
-                $weekDays = $this->getWeekdays($i,date("Y"));
-
+                $weekDays = $this->getWeekdays($i,(int)date("Y"));
                 //Iterating all employees for calculation
                 foreach ($employees as $employee) {
                     $traveledDistance = $this->calculateTraveledDistance($employee->getDistance(),$weekDays);
@@ -68,8 +67,8 @@ class CommutingController extends Controller
         });
 
         //Send headers for csv file download
-        $response->headers->set('Content-Type', 'text/csv');
-        $response->headers->set('Content-Disposition','attachment; filename="export.csv"');
+        //$response->headers->set('Content-Type', 'text/csv');
+        //$response->headers->set('Content-Disposition','attachment; filename="export.csv"');
 
         return $response;
     }
@@ -82,7 +81,7 @@ class CommutingController extends Controller
      */
     public function calculatePaymentDate($month)
     {
-        if($month < 1 || $month > 12 || !is_int($month))
+        if($month < 1 || $month > 12 || !is_numeric($month))
             return false;
 
         $year = date("Y");
@@ -107,7 +106,7 @@ class CommutingController extends Controller
 
     public function calculateTraveledDistance($distance,$weekDays)
     {
-        if(!is_int($weekDays) || !is_int($distance) || $weekDays > 23)
+        if(!is_numeric($weekDays) || !is_numeric($distance) || $weekDays > 23)
             return false;
 
         $monthlyDistance = $weekDays * $distance * 2;
@@ -124,7 +123,7 @@ class CommutingController extends Controller
      */
     public function calculateCompensation($transport,$distance,$weekDays)
     {
-        if(!is_int($distance) || !is_int($weekDays) || $weekDays > 23 || !in_array($transport,array("Bike","Public","Car")))
+        if(!is_numeric($distance) || !is_numeric($weekDays) || $weekDays > 23 || !in_array($transport,array("Bike","Bus","Train","Car")))
             return false;
         //Bus and Train has the same compensation so we call it Public
         if($transport == "Bus" || $transport == "Train")
@@ -174,6 +173,7 @@ class CommutingController extends Controller
         if($m > 12 || $m < 1 || !is_int($m) || !is_int($y))
             return false;
         $lastday = date("t",mktime(0,0,0,$m,1,$y));
+
         $weekdays=0;
         // we know first 28 days has 20 workdays so we skip that part
         for($d=29;$d<=$lastday;$d++) {

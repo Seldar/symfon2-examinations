@@ -14,7 +14,7 @@
 
     <testsuites>
         <testsuite name="Project Test Suite">
-            <directory>src/*Bundle/Tests</directory>
+            <file>src/AppBundle/Tests/Controller/CommutingControllerTest.php</file>
         </testsuite>
     </testsuites>
 

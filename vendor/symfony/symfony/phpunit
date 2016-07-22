@@ -108,7 +108,7 @@ if (isset($argv[1]) && 'symfony' === $argv[1]) {
     $runningProcs = array();
 
     foreach ($finder as $file => $fileInfo) {
-        if ('phpunit.xml.dist' === $file) {
+        if ('phpunit.xml' === $file) {
             $component = dirname($fileInfo->getPathname());
 
             // Run phpunit tests in parallel

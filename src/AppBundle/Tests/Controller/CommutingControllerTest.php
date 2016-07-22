@@ -60,7 +60,10 @@ class CommutingControllerTest extends \PHPUnit_Framework_TestCase
         $result = $controller->calculateCompensation('Bike',4,22);
         $this->assertEquals(88, $result);
 
-        $result = $controller->calculateCompensation('Public',10,22);
+        $result = $controller->calculateCompensation('Bus',10,22);
+        $this->assertEquals(110, $result);
+
+        $result = $controller->calculateCompensation('Train',10,22);
         $this->assertEquals(110, $result);
 
         $result = $controller->calculateCompensation('Car',60,22);
@@ -77,12 +80,15 @@ class CommutingControllerTest extends \PHPUnit_Framework_TestCase
         $controller = new CommutingController();
 
         $result = $controller->getWeekdays(1,2016);
-        $this->assertEquals(23, $result);
+        $this->assertEquals(21, $result);
 
         $result = $controller->getWeekdays(13,2016);
         $this->assertEquals(false, $result);
 
         $result = $controller->getWeekdays(0,2016);
+        $this->assertEquals(false, $result);
+
+        $result = $controller->getWeekdays("","");
         $this->assertEquals(false, $result);
     }
 }

@@ -460,7 +460,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_AppService()
     {
-        $this->services['cache.app'] = $instance = new \Symfony\Component\Cache\Adapter\FilesystemAdapter('+WHimWfYOs', '', (__DIR__.'/pools'));
+        $this->services['cache.app'] = $instance = new \Symfony\Component\Cache\Adapter\FilesystemAdapter('Sz6jaG7y9a', '', (__DIR__.'/pools'));
 
         if ($this->has('monolog.logger.cache')) {
             $instance->setLogger($this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
@@ -492,7 +492,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_SystemService()
     {
-        return $this->services['cache.system'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('xemKV1Gvy5', '', 'fRl2H5nglNadrZoPU9AzLg', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        return $this->services['cache.system'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('TVa0BpAZwG', '', 'F8r1ZZchzeiB7-T8pX50Zg', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
     }
 
     /**
@@ -510,8 +510,8 @@ class appDevDebugProjectContainer extends Container
         $b = new \Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer();
         $b->addPool($this->get('cache.app'));
         $b->addPool($this->get('cache.system'));
-        $b->addPool(\Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('xVxclzfqTX', '', 'fRl2H5nglNadrZoPU9AzLg', (__DIR__.'/pools'), $a));
-        $b->addPool(\Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('r5l0D1enkS', '', 'fRl2H5nglNadrZoPU9AzLg', (__DIR__.'/pools'), $a));
+        $b->addPool(\Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('3utrNWXxXv', '', 'F8r1ZZchzeiB7-T8pX50Zg', (__DIR__.'/pools'), $a));
+        $b->addPool(\Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('ZfyqbYjMZB', '', 'F8r1ZZchzeiB7-T8pX50Zg', (__DIR__.'/pools'), $a));
 
         return $this->services['cache_clearer'] = new \Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer(array(0 => $b));
     }
@@ -923,7 +923,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_7bfa66abdaa5fb6c87f491d084efe79dbf5d129cfc3e2af2b9faacfa0ce162fb');
+        $instance->setNamespace('sf2orm_default_a3b5463634a629c377b1b2c48c76bcf725ac26eb6b2b8e8933c584c937f605c9');
 
         return $instance;
     }
@@ -940,7 +940,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_7bfa66abdaa5fb6c87f491d084efe79dbf5d129cfc3e2af2b9faacfa0ce162fb');
+        $instance->setNamespace('sf2orm_default_a3b5463634a629c377b1b2c48c76bcf725ac26eb6b2b8e8933c584c937f605c9');
 
         return $instance;
     }
@@ -957,7 +957,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_7bfa66abdaa5fb6c87f491d084efe79dbf5d129cfc3e2af2b9faacfa0ce162fb');
+        $instance->setNamespace('sf2orm_default_a3b5463634a629c377b1b2c48c76bcf725ac26eb6b2b8e8933c584c937f605c9');
 
         return $instance;
     }
@@ -2417,7 +2417,7 @@ class appDevDebugProjectContainer extends Container
         $m = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($f, $j, array(), $a);
         $m->setOptions(array('login_path' => 'security_login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
 
-        return $this->services['security.firewall.map.context.secured_area'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($i, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.database_users')), 'secured_area', $a, $c, $d), 2 => $k, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $j, 'secured_area', $l, $m, array('check_path' => 'security_login', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, $this->get('security.csrf.token_manager')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5790c2841a14b3.12814834', $a, $g), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('debug.security.access.decision_manager'), $i, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $d, $j, 'secured_area', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $j, 'security_login', false), NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.secured_area'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($i, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.database_users')), 'secured_area', $a, $c, $d), 2 => $k, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $j, 'secured_area', $l, $m, array('check_path' => 'security_login', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, $this->get('security.csrf.token_manager')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '579267bfda6545.85797666', $a, $g), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('debug.security.access.decision_manager'), $i, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $d, $j, 'secured_area', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $j, 'security_login', false), NULL, NULL, $a, false));
     }
 
     /**
@@ -3794,7 +3794,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.database_users'), $this->get('security.user_checker.secured_area'), 'secured_area', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5790c2841a14b3.12814834')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.database_users'), $this->get('security.user_checker.secured_area'), 'secured_area', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('579267bfda6545.85797666')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -4197,7 +4197,7 @@ class appDevDebugProjectContainer extends Container
 
             ),
             'assetic.java.bin' => 'C:\\ProgramData\\Oracle\\Java\\javapath\\java.EXE',
-            'assetic.node.bin' => 'C:\\Program Files\\nodejs\\\\node.EXE',
+            'assetic.node.bin' => '/usr/bin/node',
             'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.reactjsx.bin' => '/usr/bin/jsx',

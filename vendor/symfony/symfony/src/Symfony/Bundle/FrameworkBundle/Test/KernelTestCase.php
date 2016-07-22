@@ -48,7 +48,7 @@ abstract class KernelTestCase extends \PHPUnit_Framework_TestCase
         $dir = static::getPhpUnitCliConfigArgument();
         if (null === $dir &&
             (is_file(getcwd().DIRECTORY_SEPARATOR.'phpunit.xml') ||
-            is_file(getcwd().DIRECTORY_SEPARATOR.'phpunit.xml.dist'))) {
+            is_file(getcwd().DIRECTORY_SEPARATOR.'phpunit.xml'))) {
             $dir = getcwd();
         }
 
