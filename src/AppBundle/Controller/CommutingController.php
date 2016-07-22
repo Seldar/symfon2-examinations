@@ -44,7 +44,7 @@ class CommutingController extends Controller
             $handle = fopen('php://output', 'r+');
 
             //CSV Titles
-            fputcsv($handle, array('Name', 'Transport', 'Traveled Distance','Compensation','Payment Date'),',');
+            fputcsv($handle, array('Name', 'Transport', 'Traveled Distance','Compensation','Payment Date'),';');
             //Getting Employee data from database (MySQL)
             $employees = $this->getDoctrine()->getRepository('AppBundle:Employee')->findAll();
 
@@ -58,7 +58,7 @@ class CommutingController extends Controller
                     $compensation = $this->calculateCompensation($employee->getTransport(), $employee->getDistance(),$weekDays);
 
                     //Add it to output
-                    fputcsv($handle, array($employee->getName(), $employee->getTransport(), $traveledDistance, $compensation, $paymentDate));
+                    fputcsv($handle, array($employee->getName(), $employee->getTransport(), $traveledDistance, $compensation, $paymentDate),";");
                 }
 
             }
@@ -67,8 +67,8 @@ class CommutingController extends Controller
         });
 
         //Send headers for csv file download
-        //$response->headers->set('Content-Type', 'text/csv');
-        //$response->headers->set('Content-Disposition','attachment; filename="export.csv"');
+        $response->headers->set('Content-Type', 'text/csv');
+        $response->headers->set('Content-Disposition','attachment; filename="export.csv"');
 
         return $response;
     }
