@@ -33,13 +33,8 @@ access the application in your browser at <http://localhost:8000/en/commuting-al
 stop the built-in web server by pressing `Ctrl + C` while you're in the
 terminal.
 
-To run tests created for the CommutingController class:
+You can run tests created for the CommutingController class by running `phpunit.phar`:
 
 ```bash
-php bin/phpunit.php
+php bin/phpunit.phar
 ```
-> **NOTE**
->
-> If you're using PHP 5.3, configure your web server to point at the `web/`
-> directory of the project. For more details, see:
-> http://symfony.com/doc/current/cookbook/configuration/web_server_configuration.html
