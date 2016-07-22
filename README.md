@@ -12,9 +12,7 @@ Requirements
 Installation
 ------------
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-download and install the demo application using Git and Composer:
+Download and install the demo application using Git and Composer:
 
      $ git clone https://github.com/Seldar/symfony2-examinations
      $ cd symfony2-examinations/
