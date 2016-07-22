@@ -1,49 +1,24 @@
 Commuting Compensation Calculator Application
 =============================================
 
-The "Commuting Compensation Calculator Application" is a tool to calculate and create a downloadable csv file containing the commuting compensation for each month from the start of current year using employee data from the mysql database.
-
-[![Build Status](https://travis-ci.org/symfony/symfony-demo.svg?branch=master)](https://travis-ci.org/symfony/symfony-demo)
+The "Commuting Compensation Calculator Application" is a tool to calculate and create a downloadable csv file containing the commuting compensation of employees for each month from the start of current year using employee data from the mysql database.
 
 Requirements
 ------------
 
   * PHP 5.3 or higher;
-  * PDO-SQLite PHP extension enabled;
   * and the [usual Symfony application requirements](http://symfony.com/doc/current/reference/requirements.html).
-
-If unsure about meeting these requirements, download the demo application and
-browse the `http://localhost:8000/config.php` script to get more detailed
-information.
 
 Installation
 ------------
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-First, install the [Symfony Installer](https://github.com/symfony/symfony-installer)
-if you haven't already. Then, install the Symfony Demo Application executing
-this command anywhere in your system:
+download and install the demo application using Git and Composer:
 
-```bash
-$ symfony demo
-
-# if you're using Windows:
-$ php symfony demo
-```
-
-If the `demo` command is not available, update your Symfony Installer to the
-most recent version executing the `symfony self-update` command.
-
-> **NOTE**
->
-> If you can't use the Symfony Installer, download and install the demo
-> application using Git and Composer:
->
->     $ git clone https://github.com/symfony/symfony-demo
->     $ cd symfony-demo/
->     $ composer install --no-interaction
-
+     $ git clone https://github.com/Seldar/symfony2-examinations
+     $ cd symfony2-examinations/
+     $ composer install --no-interaction
 Usage
 -----
 
@@ -51,7 +26,7 @@ If you have PHP 5.4 or higher, there is no need to configure a virtual host
 in your web server to access the application. Just use the built-in web server:
 
 ```bash
-$ cd symfony-demo/
+$ cd symfony2-examinations/
 $ php bin/console server:run
 ```
 
