@@ -68,8 +68,8 @@ class CommutingController extends Controller
         });
 
         //Send headers for csv file download
-        //$response->headers->set('Content-Type', 'text/csv');
-        //$response->headers->set('Content-Disposition','attachment; filename="export.csv"');
+        $response->headers->set('Content-Type', 'text/csv');
+        $response->headers->set('Content-Disposition','attachment; filename="export.csv"');
 
         return $response;
     }
