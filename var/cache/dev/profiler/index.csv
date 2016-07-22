@@ -81,3 +81,17 @@ ca5d40,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/e
 425f22,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469112277,,200
 82deb2,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469114746,,200
 031639,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469114758,,200
+f3804d,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469184522,,200
+7b0966,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469184528,,200
+f64c25,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469184572,,200
+bc2d14,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469184716,,200
+79a0f7,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469184719,,200
+ff6861,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469184721,,200
+c0cddb,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469184732,,200
+fd8ed5,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469184823,e5d358,200
+e5d358,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469184823,,500
+be6891,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469184841,,200
+bad5a8,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469184851,,200
+9b5327,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469184857,,200
+58c973,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469185290,,200
+caee4b,::1,GET,http://localhost/symfony2/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469185298,,200
