@@ -1,8 +1,7 @@
-Symfony Demo Application
-========================
+Commuting Compensation Calculator Application
+=============================================
 
-The "Symfony Demo Application" is a reference application created to show how
-to develop Symfony applications following the recommended best practices.
+The "Commuting Compensation Calculator Application" is a tool to calculate and create a downloadable csv file containing the commuting compensation for each month from the start of current year using employee data from the mysql database.
 
 [![Build Status](https://travis-ci.org/symfony/symfony-demo.svg?branch=master)](https://travis-ci.org/symfony/symfony-demo)
 
