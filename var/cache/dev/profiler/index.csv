@@ -137,3 +137,5 @@ bbe638,::1,GET,http://localhost/medicore/symfony2-examinations/web/app_dev.php/e
 03664b,::1,GET,http://localhost/medicore/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469215807,,200
 78f9f5,::1,GET,http://localhost/medicore/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469215857,,200
 30edc1,::1,GET,http://localhost/medicore/symfony2-examinations/web/app_dev.php/en/commuting-allowance/getCSV,1469215893,,200
+6873f5,127.0.0.1,GET,http://localhost:8000/,1469217133,,200
+cb0cfd,127.0.0.1,GET,http://localhost:8000/en/commuting-allowance/getCSV,1469217161,,200

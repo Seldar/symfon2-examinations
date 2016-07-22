@@ -29,10 +29,15 @@ $ php bin/console server:run
 ```
 
 This command will start a web server for the Symfony application. Now you can
-access the application in your browser at <http://localhost:8000>. You can
+access the application in your browser at <http://localhost:8000/en/commuting-allowance/getCSV>. You can
 stop the built-in web server by pressing `Ctrl + C` while you're in the
 terminal.
 
+To run tests created for the CommutingController class:
+
+```bash
+php bin/phpunit.php
+```
 > **NOTE**
 >
 > If you're using PHP 5.3, configure your web server to point at the `web/`
