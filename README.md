@@ -21,10 +21,11 @@ Installation
 ------------
 
 Download and install the application using Git and Composer:
-
-     $ git clone https://github.com/Seldar/symfony2-examinations
-     $ cd symfony2-examinations/
-     $ composer install --no-interaction
+```bash
+ $ git clone https://github.com/Seldar/symfony2-examinations
+ $ cd symfony2-examinations/
+ $ composer install --no-interaction
+```
 
 Create a mysql database named `symfony2`. Then Execute `employee.sql` in symfony2 database.
 
