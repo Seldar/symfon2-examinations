@@ -7,6 +7,7 @@ Requirements
 ------------
 
   * PHP 5.3 or higher;
+  * MySQL 5.0 or higher
   * and the [usual Symfony application requirements](http://symfony.com/doc/current/reference/requirements.html).
 
 Installation
