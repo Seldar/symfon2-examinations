@@ -11,7 +11,7 @@ Commuting by:
 - Car: €0.10/km
 
 Requirements
-------------
+------------ 
 
   * PHP 5.3 or higher;
   * MySQL 5.0 or higher;
